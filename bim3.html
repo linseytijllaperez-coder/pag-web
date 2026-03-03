@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tercer Bimestre</title>
+<link rel="stylesheet" href="bim.css">
+</head>
+<body>
+
+<header>
+<h1>Tercer Bimestre - DPW 207</h1>
+</header>
+
+<section class="contenedor">
+<div class="ejercicios">
+
+<div class="card">
+    <h3>Ejercicio 1</h3>
+    <p>Ecuación Cuadrática</p>
+    <button class="boton" onclick="mostrarCuadratica()">Ver ejercicio</button>
+</div>
+
+<div class="card">
+<h3>Ejercicio 2</h3>
+<p>Área Triángulo</p>
+<button class="boton" onclick="mostrarTriangulo()">Ver ejercicio</button>
+</div>
+
+<div class="card">
+<h3>Ejercicio 3</h3>
+<p>Par o Impar</p>
+<button class="boton" onclick="mostrarPar()">Ver ejercicio</button>
+</div>
+
+<div class="card">
+<h3>Ejercicio 4</h3>
+<p>Número Mayor</p>
+<button class="boton" onclick="mostrarMayor()">Ver ejercicio</button>
+</div>
+
+</div>
+</section>
+
+<section id="zonaEjercicio"></section>
+
+<script>
+
+function mostrarCuadratica(){
+    document.getElementById("zonaEjercicio").innerHTML = `
+        <h2>Ecuación Cuadrática</h2>
+        <p>Forma: ax² + bx + c = 0</p>
+        <input type="number" id="a" placeholder="Valor de a">
+        <input type="number" id="b" placeholder="Valor de b">
+        <input type="number" id="c" placeholder="Valor de c">
+        <button onclick="calcularCuadratica()">Calcular</button>
+        <p id="resultado"></p>
+    `;
+}
+
+function calcularCuadratica(){
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+
+    let discriminante = b*b - 4*a*c;
+
+    if(discriminante < 0){
+        document.getElementById("resultado").innerText =
+        "No tiene soluciones reales";
+    } else {
+        let x1 = (-b + Math.sqrt(discriminante)) / (2*a);
+        let x2 = (-b - Math.sqrt(discriminante)) / (2*a);
+
+        document.getElementById("resultado").innerText =
+        "Soluciones: x1 = " + x1.toFixed(2) +
+        " , x2 = " + x2.toFixed(2);
+    }
+}
+
+function mostrarTriangulo(){
+document.getElementById("zonaEjercicio").innerHTML = `
+<h2>Área Triángulo</h2>
+<input type="number" id="base">
+<input type="number" id="altura">
+<button onclick="calcTri()">Calcular</button>
+<p id="resultado"></p>`;
+}
+
+function calcTri(){
+let b = Number(document.getElementById("base").value);
+let h = Number(document.getElementById("altura").value);
+document.getElementById("resultado").innerText = "Área: " + ((b*h)/2);
+}
+
+function mostrarPar(){
+document.getElementById("zonaEjercicio").innerHTML = `
+<h2>Par o Impar</h2>
+<input type="number" id="num">
+<button onclick="calcPar()">Verificar</button>
+<p id="resultado"></p>`;
+}
+
+function calcPar(){
+let n = Number(document.getElementById("num").value);
+document.getElementById("resultado").innerText =
+n%2===0 ? "Es PAR" : "Es IMPAR";
+}
+
+function mostrarMayor(){
+document.getElementById("zonaEjercicio").innerHTML = `
+<h2>Número Mayor</h2>
+<input type="number" id="a">
+<input type="number" id="b">
+<input type="number" id="c">
+<button onclick="calcMayor()">Calcular</button>
+<p id="resultado"></p>`;
+}
+
+function calcMayor(){
+let a = Number(document.getElementById("a").value);
+let b = Number(document.getElementById("b").value);
+let c = Number(document.getElementById("c").value);
+document.getElementById("resultado").innerText =
+"Mayor: " + Math.max(a,b,c);
+}
+
+</script>
+
+<footer>
+    <a href="Prac1.html">Volver al inicio</a>
+</footer>
+
+</body>
+</html>

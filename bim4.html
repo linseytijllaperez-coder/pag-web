@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cuarto Bimestre</title>
+<link rel="stylesheet" href="bim.css">
+</head>
+<body>
+
+<header>
+<h1>Cuarto Bimestre - DPW 207</h1>
+</header>
+
+<section class="contenedor">
+<div class="ejercicios">
+
+<div class="card">
+<h3>Ejercicio 1</h3>
+<p>Tabla de Multiplicar</p>
+<button class="boton" onclick="mostrarTabla()">Ver ejercicio</button>
+</div>
+
+<div class="card">
+<h3>Ejercicio 2</h3>
+<p>Factorial</p>
+<button class="boton" onclick="mostrarFactorial()">Ver ejercicio</button>
+</div>
+
+<div class="card">
+<h3>Ejercicio 3</h3>
+<p>Convertir °C a °F</p>
+<button class="boton" onclick="mostrarConversion()">Ver ejercicio</button>
+</div>
+
+<div class="card">
+<h3>Ejercicio 4</h3>
+<p>Calculadora Completa</p>
+<button class="boton" onclick="mostrarCalculadora()">Ver ejercicio</button>
+</div>
+
+</div>
+</section>
+
+<section id="zonaEjercicio"></section>
+
+<script>
+
+function mostrarTabla(){
+document.getElementById("zonaEjercicio").innerHTML = `
+<h2>Tabla de Multiplicar</h2>
+<input type="number" id="num">
+<button onclick="calcTabla()">Mostrar</button>
+<ul id="resultado"></ul>`;
+}
+
+function calcTabla(){
+let n = Number(document.getElementById("num").value);
+let lista = document.getElementById("resultado");
+lista.innerHTML = "";
+for(let i=1;i<=10;i++){
+lista.innerHTML += "<li>"+n+" x "+i+" = "+(n*i)+"</li>";
+}
+}
+
+function mostrarFactorial(){
+document.getElementById("zonaEjercicio").innerHTML = `
+<h2>Factorial</h2>
+<input type="number" id="fact">
+<button onclick="calcFactorial()">Calcular</button>
+<p id="resultado"></p>`;
+}
+
+function calcFactorial(){
+let n = Number(document.getElementById("fact").value);
+let resultado = 1;
+for(let i=1;i<=n;i++){
+resultado*=i;
+}
+document.getElementById("resultado").innerText="Resultado: "+resultado;
+}
+
+function mostrarConversion(){
+document.getElementById("zonaEjercicio").innerHTML = `
+<h2>Convertir °C a °F</h2>
+<input type="number" id="c">
+<button onclick="calcConversion()">Convertir</button>
+<p id="resultado"></p>`;
+}
+
+function calcConversion(){
+let c = Number(document.getElementById("c").value);
+let f = (c*9/5)+32;
+document.getElementById("resultado").innerText="Fahrenheit: "+f;
+}
+
+function mostrarCalculadora(){
+document.getElementById("zonaEjercicio").innerHTML = `
+<h2>Calculadora Completa</h2>
+<input type="number" id="a">
+<input type="number" id="b">
+<select id="op">
+<option value="+">Sumar</option>
+<option value="-">Restar</option>
+<option value="*">Multiplicar</option>
+<option value="/">Dividir</option>
+</select>
+<button onclick="calcCompleta()">Calcular</button>
+<p id="resultado"></p>`;
+}
+
+function calcCompleta(){
+let a = Number(document.getElementById("a").value);
+let b = Number(document.getElementById("b").value);
+let op = document.getElementById("op").value;
+let r;
+
+if(op==="+") r=a+b;
+if(op==="-") r=a-b;
+if(op==="*") r=a*b;
+if(op==="/") r=b===0?"No se puede dividir entre 0":a/b;
+
+document.getElementById("resultado").innerText="Resultado: "+r;
+}
+
+</script>
+
+<footer>
+    <a href="Prac1.html">Volver al inicio</a>
+</footer>
+
+</body>
+</html>
