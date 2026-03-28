@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Primer Bimestre</title>
+    <link rel="stylesheet" href="bim.css">
+</head>
+<body>
+
+<header>
+    <h1>Primer Bimestre - DPW 207</h1>
+</header>
+
+<section class="contenedor">
+    <div class="ejercicios">
+
+        <div class="card">
+            <h3>Ejercicio 1</h3>
+            <p>SUMA</p>
+            <button class="boton" onclick="mostrarSuma()">Ver ejercicio</button>
+        </div>
+
+        <div class="card">
+            <h3>Ejercicio 2</h3>
+            <p>RESTA</p>
+            <button class="boton" onclick="mostrarResta()">Ver ejercicio</button>
+        </div>
+
+        <div class="card">
+            <h3>Ejercicio 3</h3>
+            <p>MULTIPLICACIÓN</p>
+            <button class="boton" onclick="mostrarMulti()">Ver ejercicio</button>
+        </div>
+
+        <div class="card">
+            <h3>Ejercicio 4</h3>
+            <p>Mínimo Común Múltiplo (MCM)</p>
+            <button class="boton" onclick="mostrarMCM()">Ver ejercicio</button>
+    </div>
+
+    </div>
+</section>
+
+<!-- AQUÍ SE MOSTRARÁ EL EJERCICIO -->
+<section id="zonaEjercicio"></section>
+
+<footer>
+    <a href="Prac1.html">Volver al inicio</a>
+</footer>
+
+<script>
+
+function mostrarSuma(){
+    document.getElementById("zonaEjercicio").innerHTML = `
+        <h2>Suma</h2>
+        <input type="number" id="n1" placeholder="Número 1">
+        <input type="number" id="n2" placeholder="Número 2">
+        <button onclick="calcularSuma()">Calcular</button>
+        <p id="resultado"></p>
+    `;
+}
+
+function calcularSuma(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("resultado").innerText = "Resultado: " + (a + b);
+}
+
+function mostrarResta(){
+    document.getElementById("zonaEjercicio").innerHTML = `
+        <h2>Resta</h2>
+        <input type="number" id="n1">
+        <input type="number" id="n2">
+        <button onclick="calcularResta()">Calcular</button>
+        <p id="resultado"></p>
+    `;
+}
+
+function calcularResta(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("resultado").innerText = "Resultado: " + (a - b);
+}
+
+function mostrarMulti(){
+    document.getElementById("zonaEjercicio").innerHTML = `
+        <h2>Multiplicación</h2>
+        <input type="number" id="n1">
+        <input type="number" id="n2">
+        <button onclick="calcularMulti()">Calcular</button>
+        <p id="resultado"></p>
+    `;
+}
+
+function calcularMulti(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("resultado").innerText = "Resultado: " + (a * b);
+}
+
+function mostrarMCM(){
+    document.getElementById("zonaEjercicio").innerHTML = `
+        <h2>Mínimo Común Múltiplo</h2>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <button onclick="calcularMCM()">Calcular</button>
+        <p id="resultado"></p>
+    `;
+}
+
+function calcularMCM(){
+    let a = Number(document.getElementById("num1").value);
+    let b = Number(document.getElementById("num2").value);
+
+    let mayor = Math.max(a, b);
+    let mcm = mayor;
+
+    while(true){
+        if(mcm % a === 0 && mcm % b === 0){
+            break;
+        }
+        mcm++;
+    }
+
+    document.getElementById("resultado").innerText =
+        "MCM: " + mcm;
+}
+
+</script>
+
+<footer>
+    <a href="Prac1.html">Volver al inicio</a>
+</footer>
+
+</body>
+</html>

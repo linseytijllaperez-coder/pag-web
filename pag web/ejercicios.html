@@ -1,0 +1,285 @@
+<bim1 class="ht">
+<div class="contenedor">
+   <!-- contenido -->
+
+<h2>Suma</h2>
+<div class="contenedor">
+
+    <input type="number" id="s1" placeholder="Número 1">
+    <input type="number" id="s2" placeholder="Número 2">
+    <button onclick="sumar()">Sumar</button>
+    <p class="resultado" id="resSuma"></p>
+</div>
+
+<script>
+function sumar(){
+    let a = Number(document.getElementById("s1").value);
+    let b = Number(document.getElementById("s2").value);
+    document.getElementById("resSuma").innerText = "Resultado: " + (a + b);
+}
+</script>
+
+<h2>Resta</h2>
+<div class="contenedor">
+    <input type="number" id="r1" placeholder="Número 1">
+    <input type="number" id="r2" placeholder="Número 2">
+    <button onclick="restar()">Restar</button>
+    <p class="resultado" id="resResta"></p>
+</div>
+
+<script>
+function restar(){
+    let a = Number(document.getElementById("r1").value);
+    let b = Number(document.getElementById("r2").value);
+    document.getElementById("resResta").innerText = "Resultado: " + (a - b);
+}
+</script>
+
+<h2>Multiplicación</h2>
+<div class="contenedor">
+    <input type="number" id="m1" placeholder="Número 1">
+    <input type="number" id="m2" placeholder="Número 2">
+    <button onclick="multiplicar()">Multiplicar</button>
+    <p class="resultado" id="resMulti"></p>
+</div>
+
+<script>
+function multiplicar(){
+    let a = Number(document.getElementById("m1").value);
+    let b = Number(document.getElementById("m2").value);
+    document.getElementById("resMulti").innerText = "Resultado: " + (a * b);
+}
+</script>
+</div>
+</bim1>
+
+<bim2 class="htm">
+<div class="contenedor">
+   <!-- contenido -->
+<h2>División</h2>
+<div class="contenedor">
+    <input type="number" id="d1" placeholder="Número 1">
+    <input type="number" id="d2" placeholder="Número 2">
+    <button onclick="dividir()">Dividir</button>
+    <p class="resultado" id="resDiv"></p>
+</div>
+
+<script>
+function dividir(){
+    let a = Number(document.getElementById("d1").value);
+    let b = Number(document.getElementById("d2").value);
+
+    if(b === 0){
+        document.getElementById("resDiv").innerText = "No se puede dividir entre 0";
+    } else {
+        document.getElementById("resDiv").innerText = "Resultado: " + (a / b);
+    }
+}
+</script>
+
+<h2>Promedio</h2>
+<div class="contenedor">
+    <input type="number" id="p1" placeholder="Nota 1">
+    <input type="number" id="p2" placeholder="Nota 2">
+    <input type="number" id="p3" placeholder="Nota 3">
+    <button onclick="promedio()">Calcular</button>
+    <p class="resultado" id="resProm"></p>
+</div>
+
+<script>
+function promedio(){
+    let a = Number(document.getElementById("p1").value);
+    let b = Number(document.getElementById("p2").value);
+    let c = Number(document.getElementById("p3").value);
+    document.getElementById("resProm").innerText = "Promedio: " + ((a+b+c)/3);
+}
+</script>
+
+<h2>Potencia</h2>
+<div class="contenedor">
+    <input type="number" id="base" placeholder="Base">
+    <input type="number" id="expo" placeholder="Exponente">
+    <button onclick="potencia()">Calcular</button>
+    <p class="resultado" id="resPot"></p>
+</div>
+
+<script>
+function potencia(){
+    let b = Number(document.getElementById("base").value);
+    let e = Number(document.getElementById("expo").value);
+    document.getElementById("resPot").innerText = "Resultado: " + (b ** e);
+}
+</script>
+
+
+</div>
+</bim2>
+
+<bim3 class="html">
+    <div class="contenedor">
+   <!-- contenido -->
+
+   <h2>Raíz Cuadrada</h2>
+<div class="contenedor">
+    <input type="number" id="raiz" placeholder="Número">
+    <button onclick="calcularRaiz()">Calcular</button>
+    <p class="resultado" id="resRaiz"></p>
+</div>
+
+<script>
+function calcularRaiz(){
+    let n = Number(document.getElementById("raiz").value);
+    if(n < 0){
+        document.getElementById("resRaiz").innerText = "No existe raíz real";
+    } else {
+        document.getElementById("resRaiz").innerText = "Resultado: " + Math.sqrt(n);
+    }
+}
+</script>
+
+<h2>Área de Triángulo</h2>
+<div class="contenedor">
+    <input type="number" id="baseTri" placeholder="Base">
+    <input type="number" id="alturaTri" placeholder="Altura">
+    <button onclick="areaTriangulo()">Calcular</button>
+    <p class="resultado" id="resTri"></p>
+</div>
+
+<script>
+function areaTriangulo(){
+    let b = Number(document.getElementById("baseTri").value);
+    let h = Number(document.getElementById("alturaTri").value);
+    document.getElementById("resTri").innerText = "Área: " + ((b*h)/2);
+}
+</script>
+
+<h2>Número Mayor</h2>
+<div class="contenedor">
+    <input type="number" id="n1" placeholder="Número 1">
+    <input type="number" id="n2" placeholder="Número 2">
+    <input type="number" id="n3" placeholder="Número 3">
+    <button onclick="mayor()">Calcular</button>
+    <p class="resultado" id="resMayor"></p>
+</div>
+
+<script>
+function mayor(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    let c = Number(document.getElementById("n3").value);
+    let mayor = Math.max(a,b,c);
+    document.getElementById("resMayor").innerText = "El mayor es: " + mayor;
+}
+</script>
+
+<h2>Convertir °C a °F</h2>
+<div class="contenedor">
+    <input type="number" id="celsius" placeholder="Grados Celsius">
+    <button onclick="convertir()">Convertir</button>
+    <p class="resultado" id="resTemp"></p>
+</div>
+
+<script>
+function convertir(){
+    let c = Number(document.getElementById("celsius").value);
+    let f = (c * 9/5) + 32;
+    document.getElementById("resTemp").innerText = "Fahrenheit: " + f;
+}
+</script>
+    </div>
+</bim3>
+
+<bim4 class="html">
+    <div class="contenedor">
+      <!-- contenido -->
+       <h2>Par o Impar</h2>
+<div class="contenedor">
+    <input type="number" id="numero">
+    <button onclick="verificar()">Verificar</button>
+    <p class="resultado" id="resPar"></p>
+</div>
+
+<script>
+function verificar(){
+    let n = Number(document.getElementById("numero").value);
+    if(n % 2 === 0){
+        document.getElementById("resPar").innerText = "Es número PAR";
+    } else {
+        document.getElementById("resPar").innerText = "Es número IMPAR";
+    }
+}
+</script>
+
+<h2>Tabla de Multiplicar</h2>
+<div class="contenedor">
+    <input type="number" id="tabla">
+    <button onclick="mostrarTabla()">Mostrar</button>
+    <ul id="resultadoTabla"></ul>
+</div>
+
+<script>
+function mostrarTabla(){
+    let n = Number(document.getElementById("tabla").value);
+    let lista = document.getElementById("resultadoTabla");
+    lista.innerHTML = "";
+    for(let i=1; i<=10; i++){
+        let li = document.createElement("li");
+        li.textContent = n + " x " + i + " = " + (n*i);
+        lista.appendChild(li);
+    }
+}
+</script>
+
+<h2>Factorial</h2>
+<div class="contenedor">
+    <input type="number" id="fact">
+    <button onclick="factorial()">Calcular</button>
+    <p class="resultado" id="resFact"></p>
+</div>
+
+<script>
+function factorial(){
+    let n = Number(document.getElementById("fact").value);
+    let resultado = 1;
+
+    for(let i=1; i<=n; i++){
+        resultado *= i;
+    }
+
+    document.getElementById("resFact").innerText = "Resultado: " + resultado;
+}
+</script>
+
+<h2>Calculadora Completa</h2>
+<div class="contenedor">
+    <input type="number" id="a">
+    <input type="number" id="b">
+
+    <select id="operacion">
+        <option value="+">Sumar</option>
+        <option value="-">Restar</option>
+        <option value="*">Multiplicar</option>
+        <option value="/">Dividir</option>
+    </select>
+
+    <button onclick="calcular()">Calcular</button>
+    <p class="resultado" id="resFinal"></p>
+</div>
+
+<script>
+function calcular(){
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let op = document.getElementById("operacion").value;
+    let resultado;
+
+    if(op === "+") resultado = a + b;
+    if(op === "-") resultado = a - b;
+    if(op === "*") resultado = a * b;
+    if(op === "/") resultado = b !== 0 ? a / b : "No se puede dividir entre 0";
+
+    document.getElementById("resFinal").innerText = "Resultado: " + resultado;
+}
+</script>
+    </div>
+</bim4>
